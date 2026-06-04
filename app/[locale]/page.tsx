@@ -71,7 +71,7 @@ export default async function HomePage({
   ];
 
   return (
-    <div className="flex flex-col gap-12 pb-16">
+    <div className="space-y-12 pb-16">
       <section className="text-center py-12 px-4">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
           {t("hero.title")}
