@@ -1,0 +1,478 @@
+{
+  "common": {
+    "appName": "QR Shuttle",
+    "tagline": "免费在线二维码生成器",
+    "description": "为URL、WiFi、vCard、电子邮件等生成自定义二维码。100%隐私保护，无水印，无需注册。导出为PNG、SVG或JPG格式。",
+    "getStarted": "开始使用",
+    "learnMore": "了解更多",
+    "generateQR": "生成二维码",
+    "download": "下载",
+    "copy": "复制",
+    "copied": "已复制！",
+    "cancel": "取消",
+    "save": "保存",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "warning": "警告",
+    "info": "信息"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contact": "联系我们",
+    "github": "GitHub",
+    "theme": "主题",
+    "language": "语言"
+  },
+  "theme": {
+    "system": "跟随系统",
+    "light": "浅色模式",
+    "dark": "深色模式"
+  },
+  "language": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "home": {
+    "title": "QR Shuttle — 免费在线二维码生成器",
+    "subtitle": "为URL、WiFi、vCard、电子邮件等生成自定义二维码。100%隐私保护，无水印，无需注册。",
+    "hero": {
+      "title": "即时生成二维码",
+      "subtitle": "为任何目的创建自定义二维码。所有处理都在您的浏览器中进行——您的数据永远不会离开您的设备。",
+      "cta": "开始生成"
+    },
+    "features": {
+      "title": "为什么选择 QR Shuttle？",
+      "subtitle": "最注重隐私的二维码生成器",
+      "items": {
+        "private": {
+          "title": "100% 隐私保护",
+          "description": "所有二维码都在您的浏览器中生成，数据不会上传到任何服务器"
+        },
+        "types": {
+          "title": "多种类型支持",
+          "description": "支持URL、WiFi、vCard、电子邮件、短信、文本、电话、位置、事件等所有类型"
+        },
+        "custom": {
+          "title": "自定义样式",
+          "description": "选择颜色、添加Logo、调整大小和样式以匹配您的品牌"
+        },
+        "quality": {
+          "title": "高质量输出",
+          "description": "导出为PNG、SVG或JPG格式，尺寸最大可达1024px"
+        },
+        "free": {
+          "title": "无需注册",
+          "description": "无需创建账户即可立即生成无限二维码"
+        },
+        "nowatermark": {
+          "title": "永久免费",
+          "description": "无水印、无限制、无隐藏费用——完全免费使用"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "工作原理",
+      "subtitle": "3个简单步骤生成二维码",
+      "steps": {
+        "step1": {
+          "title": "选择类型",
+          "description": "选择二维码类型（URL、WiFi、vCard等）"
+        },
+        "step2": {
+          "title": "输入内容",
+          "description": "输入您的内容并自定义设计"
+        },
+        "step3": {
+          "title": "下载使用",
+          "description": "下载为PNG、SVG或JPG格式"
+        }
+      }
+    },
+    "generator": {
+      "title": "二维码生成器",
+      "subtitle": "在下方创建您的自定义二维码",
+      "tabs": {
+        "url": "网址",
+        "text": "文本",
+        "wifi": "WiFi",
+        "vcard": "名片",
+        "email": "电子邮件",
+        "sms": "短信",
+        "phone": "电话",
+        "location": "位置",
+        "event": "事件"
+      },
+      "inputs": {
+        "url": {
+          "label": "网站网址",
+          "placeholder": "https://example.com"
+        },
+        "text": {
+          "label": "文本内容",
+          "placeholder": "在此输入任何文本..."
+        },
+        "wifi": {
+          "ssid": {
+            "label": "网络名称 (SSID)",
+            "placeholder": "MyWiFiNetwork"
+          },
+          "password": {
+            "label": "密码",
+            "placeholder": "输入密码"
+          },
+          "encryption": {
+            "label": "加密方式",
+            "placeholder": "选择加密类型"
+          },
+          "hidden": {
+            "label": "隐藏网络"
+          }
+        },
+        "vcard": {
+          "firstName": {
+            "label": "名",
+            "placeholder": "小明"
+          },
+          "lastName": {
+            "label": "姓",
+            "placeholder": "张"
+          },
+          "phone": {
+            "label": "电话",
+            "placeholder": "+8613800138000"
+          },
+          "email": {
+            "label": "电子邮件",
+            "placeholder": "zhangsan@example.com"
+          },
+          "company": {
+            "label": "公司",
+            "placeholder": "公司名称"
+          },
+          "title": {
+            "label": "职位",
+            "placeholder": "软件工程师"
+          },
+          "url": {
+            "label": "网站",
+            "placeholder": "https://example.com"
+          }
+        },
+        "email": {
+          "to": {
+            "label": "收件人邮箱",
+            "placeholder": "recipient@example.com"
+          },
+          "subject": {
+            "label": "主题",
+            "placeholder": "邮件主题"
+          },
+          "body": {
+            "label": "内容",
+            "placeholder": "邮件内容..."
+          }
+        },
+        "sms": {
+          "phone": {
+            "label": "手机号码",
+            "placeholder": "+8613800138000"
+          },
+          "message": {
+            "label": "短信内容",
+            "placeholder": "短信内容..."
+          }
+        },
+        "phone": {
+          "number": {
+            "label": "电话号码",
+            "placeholder": "+8613800138000"
+          }
+        },
+        "location": {
+          "latitude": {
+            "label": "纬度",
+            "placeholder": "39.9042"
+          },
+          "longitude": {
+            "label": "经度",
+            "placeholder": "116.4074"
+          }
+        },
+        "event": {
+          "title": {
+            "label": "事件标题",
+            "placeholder": "会议"
+          },
+          "start": {
+            "label": "开始时间",
+            "placeholder": "选择开始时间"
+          },
+          "end": {
+            "label": "结束时间",
+            "placeholder": "选择结束时间"
+          },
+          "location": {
+            "label": "地点",
+            "placeholder": "事件地点"
+          },
+          "description": {
+            "label": "描述",
+            "placeholder": "事件描述..."
+          }
+        }
+      },
+      "controls": {
+        "title": "自定义选项",
+        "foreground": "前景色",
+        "background": "背景色",
+        "size": "大小",
+        "errorCorrection": "纠错级别",
+        "errorLevels": {
+          "L": "L - 7%",
+          "M": "M - 15%",
+          "Q": "Q - 25%",
+          "H": "H - 30%"
+        },
+        "style": "样式",
+        "styles": {
+          "square": "方形",
+          "dots": "圆点",
+          "rounded": "圆角"
+        },
+        "logo": "Logo",
+        "logoSize": "Logo大小",
+        "transparent": "透明背景"
+      },
+      "export": {
+        "title": "导出",
+        "png": "PNG",
+        "svg": "SVG",
+        "jpg": "JPG"
+      }
+    },
+    "templates": {
+      "title": "快速模板",
+      "subtitle": "从预设模板开始",
+      "items": {
+        "url": {
+          "title": "网站网址",
+          "description": "为任何网站链接生成二维码"
+        },
+        "wifi": {
+          "title": "WiFi连接",
+          "description": "轻松分享WiFi凭据"
+        },
+        "vcard": {
+          "title": "电子名片",
+          "description": "分享联系人信息"
+        },
+        "email": {
+          "title": "发送邮件",
+          "description": "预填邮件主题和内容"
+        },
+        "sms": {
+          "title": "发送短信",
+          "description": "预填短信内容"
+        },
+        "text": {
+          "title": "纯文本",
+          "description": "任何文本内容"
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "关于 QR Shuttle",
+    "subtitle": "注重隐私的二维码生成器",
+    "description": "QR Shuttle是一个免费的在线工具，直接在您的浏览器中生成二维码。我们相信隐私优先的设计——您的数据永远不会离开您的设备。",
+    "features": {
+      "privacy": {
+        "title": "隐私优先",
+        "description": "所有二维码都在您的浏览器本地生成。数据不会上传到任何服务器。"
+      },
+      "openSource": {
+        "title": "开源透明",
+        "description": "我们的代码是开源的，透明的。您可以验证我们的隐私声明。"
+      },
+      "noTracking": {
+        "title": "无追踪",
+        "description": "我们不追踪您，不使用cookies，不收集任何个人信息。"
+      },
+      "free": {
+        "title": "完全免费",
+        "description": "无隐藏费用，无高级功能，无水印——100%永久免费。"
+      }
+    },
+    "faq": {
+      "whoFor": {
+        "title": "QR Shuttle 适合谁？",
+        "items": {
+          "marketers": "为营销活动和社交媒体创建二维码的营销人员",
+          "business": "用于名片和店铺展示的小企业主",
+          "events": "用于签到码和WiFi分享的活动组织者",
+          "developers": "测试二维码实现的开发人员"
+        }
+      },
+      "whenUse": {
+        "title": "什么时候应该使用 QR Shuttle？",
+        "items": {
+          "marketing": "营销活动和广告材料",
+          "business": "名片和专业社交",
+          "restaurant": "餐厅菜单和无接触点餐",
+          "events": "活动签到和注册",
+          "wifi": "与访客分享WiFi凭据"
+        }
+      },
+      "howtos": {
+        "generate": {
+          "title": "如何生成二维码",
+          "steps": {
+            "step1": "选择您要创建的二维码类型",
+            "step2": "输入您的内容（网址、文本、WiFi详细信息等）",
+            "step3": "自定义颜色、大小和样式",
+            "step4": "下载为PNG、SVG或JPG格式"
+          }
+        }
+      },
+      "comparison": {
+        "title": "QR Shuttle 与其他工具对比",
+        "columns": ["功能", "QR Shuttle", "qr-code-generator.com", "qrcode-monkey.com"],
+        "rows": {
+          "privacy": ["隐私保护", "100%浏览器端", "服务器处理", "服务器处理"],
+          "price": ["价格", "永久免费", "有广告的免费增值", "免费增值"],
+          "watermark": ["水印", "无", "免费版有", "免费版有"],
+          "registration": ["注册要求", "无需注册", "功能需要注册", "功能需要注册"]
+        }
+      },
+      "faqs": [
+        {
+          "question": "QR Shuttle 真的免费吗？",
+          "answer": "是的，QR Shuttle 完全免费使用。没有隐藏费用、高级功能或水印。您可以无限制地生成无限二维码。"
+        },
+        {
+          "question": "我的数据安全吗？",
+          "answer": "绝对安全。所有二维码生成都直接在您的浏览器中进行。数据不会上传到任何服务器，确保完全的隐私和安全。"
+        },
+        {
+          "question": "支持哪些二维码类型？",
+          "answer": "QR Shuttle 支持 URL、文本、WiFi、vCard、电子邮件、短信、电话、位置和事件二维码。每种类型都有特定的输入字段，便于生成。"
+        },
+        {
+          "question": "我可以自定义二维码设计吗？",
+          "answer": "是的，您可以自定义前景色和背景色，选择方形、圆点或圆角样式，调整大小，甚至可以在二维码中心添加Logo。"
+        },
+        {
+          "question": "可以导出哪些格式？",
+          "answer": "您可以将二维码导出为 PNG、SVG 或 JPG 格式。PNG 最适合网络使用，SVG 可无损缩放，JPG 文件更小。"
+        },
+        {
+          "question": "需要创建账户吗？",
+          "answer": "不需要，QR Shuttle 无需注册或创建账户。只需访问网站即可立即开始生成二维码。"
+        },
+        {
+          "question": "我可以商业使用二维码吗？",
+          "answer": "可以，所有生成的二维码均可免费用于个人和商业用途。没有任何使用限制。"
+        },
+        {
+          "question": "WiFi 二维码如何工作？",
+          "answer": "WiFi 二维码包含网络凭据。扫描后，设备可以自动连接到 WiFi 网络，无需手动输入密码。"
+        },
+        {
+          "question": "什么是纠错级别？",
+          "answer": "纠错级别决定了二维码在损坏多少的情况下仍能被读取。更高级别（H=30%）适合带Logo的二维码，而较低级别（L=7%）生成更小的二维码。"
+        }
+      ]
+    }
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "subtitle": "您的隐私是我们的首要任务",
+    "lastUpdated": "最后更新：2026年6月",
+    "sections": {
+      "dataCollection": {
+        "title": "数据收集",
+        "content": "QR Shuttle 不收集任何个人数据。所有二维码生成完全在您的浏览器中进行。我们无法访问您编码的内容、您的IP地址或任何其他身份信息。"
+      },
+      "dataUsage": {
+        "title": "数据使用",
+        "content": "由于我们不收集任何数据，我们不会使用、共享或出售任何信息。我们的服务完全在客户端运行，确保完全的隐私。"
+      },
+      "dataSecurity": {
+        "title": "数据安全",
+        "content": "您的数据安全得到保障，因为您的数据永远不会离开您的设备。所有处理都在您的网络浏览器中使用 JavaScript 本地进行。不进行任何服务器端处理。"
+      },
+      "thirdParty": {
+        "title": "第三方服务",
+        "content": "我们使用 Cloudflare 进行内容分发和托管。除了标准的网络服务器日志外，没有与 Cloudflare 共享任何用户数据。我们不使用分析、跟踪 cookie 或广告网络。"
+      },
+      "userRights": {
+        "title": "您的权利",
+        "content": "由于我们不收集个人数据，因此没有数据可供访问、修改或删除。您始终完全控制您的信息。"
+      },
+      "changes": {
+        "title": "政策变更",
+        "content": "我们可能会偶尔更新此隐私政策。任何更改将在此页面上发布，并附上更新的修订日期。"
+      },
+      "contact": {
+        "title": "联系我们",
+        "content": "如果您对此隐私政策有疑问，请通过 support@shuttlelab.org 联系我们"
+      }
+    }
+  },
+  "terms": {
+    "title": "服务条款",
+    "subtitle": "使用 QR Shuttle 的条款和条件",
+    "lastUpdated": "最后更新：2026年6月",
+    "sections": {
+      "service": {
+        "title": "服务描述",
+        "content": "QR Shuttle 是一个免费的在线二维码生成器，允许用户为各种目的创建二维码，包括 URL、WiFi 凭据、联系信息等。服务按原样提供，不提供任何保证。"
+      },
+      "license": {
+        "title": "使用许可",
+        "content": "您被授予使用 QR Shuttle 的非排他性、不可转让的许可，可用于个人和商业目的。您不得修改、分发或对服务进行逆向工程。"
+      },
+      "limitations": {
+        "title": "责任限制",
+        "content": "QR Shuttle 按'原样'提供，不提供任何形式的保证。我们不对因使用本服务而产生的任何损害负责，包括但不限于直接、间接、附带或后果性损害。"
+      },
+      "intellectualProperty": {
+        "title": "知识产权",
+        "content": "您生成的二维码是您的财产。QR Shuttle 对您编码的内容不保留任何权利。服务本身，包括设计、代码和文档，受版权保护。"
+      },
+      "changes": {
+        "title": "条款变更",
+        "content": "我们保留随时修改这些条款的权利。继续使用服务即表示接受任何更改。"
+      },
+      "contact": {
+        "title": "联系信息",
+        "content": "如有任何关于这些条款的问题，请联系 support@shuttlelab.org"
+      }
+    }
+  },
+  "footer": {
+    "about": "关于",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contact": "联系我们",
+    "github": "GitHub",
+    "copyright": "© 2026 ShuttleLab. 保留所有权利。",
+    "otherTools": "其他 ShuttleLab 工具",
+    "otherToolsDescription": "查看我们的其他免费工具"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "页面未找到",
+    "description": "您要查找的页面不存在或已被移动。",
+    "backHome": "返回首页",
+    "otherTools": "试试我们的其他工具"
+  }
+}

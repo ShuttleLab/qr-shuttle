@@ -1,0 +1,478 @@
+{
+  "common": {
+    "appName": "QR Shuttle",
+    "tagline": "Free Online QR Code Generator",
+    "description": "Generate custom QR codes for URLs, WiFi, vCard, email, and more. 100% private, no watermarks, no registration. Export as PNG, SVG, or JPG.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "generateQR": "Generate QR Code",
+    "download": "Download",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "github": "GitHub",
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "theme": {
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "home": {
+    "title": "QR Shuttle — Free Online QR Code Generator",
+    "subtitle": "Generate custom QR codes for URLs, WiFi, vCard, email, and more. 100% private, no watermarks, no registration.",
+    "hero": {
+      "title": "Generate QR Codes Instantly",
+      "subtitle": "Create custom QR codes for any purpose. All processing happens in your browser — your data never leaves your device.",
+      "cta": "Start Generating"
+    },
+    "features": {
+      "title": "Why Choose QR Shuttle?",
+      "subtitle": "The most privacy-focused QR code generator available",
+      "items": {
+        "private": {
+          "title": "100% Private",
+          "description": "All QR codes generated in your browser, no data uploaded to any server"
+        },
+        "types": {
+          "title": "Multiple Types",
+          "description": "URL, WiFi, vCard, Email, SMS, Text, Phone, Location, Event — all supported"
+        },
+        "custom": {
+          "title": "Custom Styles",
+          "description": "Choose colors, add logo, adjust size and style to match your brand"
+        },
+        "quality": {
+          "title": "High Quality",
+          "description": "Export as PNG, SVG, or JPG in any size up to 1024px"
+        },
+        "free": {
+          "title": "No Registration",
+          "description": "Generate unlimited QR codes instantly without creating an account"
+        },
+        "nowatermark": {
+          "title": "Free Forever",
+          "description": "No watermarks, no limits, no hidden fees — completely free to use"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Generate a QR code in 3 simple steps",
+      "steps": {
+        "step1": {
+          "title": "Choose Type",
+          "description": "Select QR code type (URL, WiFi, vCard, etc.)"
+        },
+        "step2": {
+          "title": "Enter Content",
+          "description": "Enter your content and customize the design"
+        },
+        "step3": {
+          "title": "Download",
+          "description": "Download in PNG, SVG, or JPG format"
+        }
+      }
+    },
+    "generator": {
+      "title": "QR Code Generator",
+      "subtitle": "Create your custom QR code below",
+      "tabs": {
+        "url": "URL",
+        "text": "Text",
+        "wifi": "WiFi",
+        "vcard": "vCard",
+        "email": "Email",
+        "sms": "SMS",
+        "phone": "Phone",
+        "location": "Location",
+        "event": "Event"
+      },
+      "inputs": {
+        "url": {
+          "label": "Website URL",
+          "placeholder": "https://example.com"
+        },
+        "text": {
+          "label": "Text Content",
+          "placeholder": "Enter any text here..."
+        },
+        "wifi": {
+          "ssid": {
+            "label": "Network Name (SSID)",
+            "placeholder": "MyWiFiNetwork"
+          },
+          "password": {
+            "label": "Password",
+            "placeholder": "Enter password"
+          },
+          "encryption": {
+            "label": "Encryption",
+            "placeholder": "Select encryption type"
+          },
+          "hidden": {
+            "label": "Hidden Network"
+          }
+        },
+        "vcard": {
+          "firstName": {
+            "label": "First Name",
+            "placeholder": "John"
+          },
+          "lastName": {
+            "label": "Last Name",
+            "placeholder": "Doe"
+          },
+          "phone": {
+            "label": "Phone",
+            "placeholder": "+1234567890"
+          },
+          "email": {
+            "label": "Email",
+            "placeholder": "john@example.com"
+          },
+          "company": {
+            "label": "Company",
+            "placeholder": "Company Name"
+          },
+          "title": {
+            "label": "Job Title",
+            "placeholder": "Software Engineer"
+          },
+          "url": {
+            "label": "Website",
+            "placeholder": "https://example.com"
+          }
+        },
+        "email": {
+          "to": {
+            "label": "Recipient Email",
+            "placeholder": "recipient@example.com"
+          },
+          "subject": {
+            "label": "Subject",
+            "placeholder": "Email subject"
+          },
+          "body": {
+            "label": "Message",
+            "placeholder": "Email body..."
+          }
+        },
+        "sms": {
+          "phone": {
+            "label": "Phone Number",
+            "placeholder": "+1234567890"
+          },
+          "message": {
+            "label": "Message",
+            "placeholder": "SMS message..."
+          }
+        },
+        "phone": {
+          "number": {
+            "label": "Phone Number",
+            "placeholder": "+1234567890"
+          }
+        },
+        "location": {
+          "latitude": {
+            "label": "Latitude",
+            "placeholder": "37.7749"
+          },
+          "longitude": {
+            "label": "Longitude",
+            "placeholder": "-122.4194"
+          }
+        },
+        "event": {
+          "title": {
+            "label": "Event Title",
+            "placeholder": "Meeting"
+          },
+          "start": {
+            "label": "Start Time",
+            "placeholder": "Select start time"
+          },
+          "end": {
+            "label": "End Time",
+            "placeholder": "Select end time"
+          },
+          "location": {
+            "label": "Location",
+            "placeholder": "Event location"
+          },
+          "description": {
+            "label": "Description",
+            "placeholder": "Event description..."
+          }
+        }
+      },
+      "controls": {
+        "title": "Customization",
+        "foreground": "Foreground Color",
+        "background": "Background Color",
+        "size": "Size",
+        "errorCorrection": "Error Correction Level",
+        "errorLevels": {
+          "L": "L - 7%",
+          "M": "M - 15%",
+          "Q": "Q - 25%",
+          "H": "H - 30%"
+        },
+        "style": "Style",
+        "styles": {
+          "square": "Square",
+          "dots": "Dots",
+          "rounded": "Rounded"
+        },
+        "logo": "Logo",
+        "logoSize": "Logo Size",
+        "transparent": "Transparent Background"
+      },
+      "export": {
+        "title": "Export",
+        "png": "PNG",
+        "svg": "SVG",
+        "jpg": "JPG"
+      }
+    },
+    "templates": {
+      "title": "Quick Templates",
+      "subtitle": "Start with a preset template",
+      "items": {
+        "url": {
+          "title": "Website URL",
+          "description": "Generate QR code for any website link"
+        },
+        "wifi": {
+          "title": "WiFi Access",
+          "description": "Share WiFi credentials easily"
+        },
+        "vcard": {
+          "title": "Business Card",
+          "description": "Share contact information"
+        },
+        "email": {
+          "title": "Send Email",
+          "description": "Pre-filled email with subject"
+        },
+        "sms": {
+          "title": "Send SMS",
+          "description": "Pre-filled text message"
+        },
+        "text": {
+          "title": "Plain Text",
+          "description": "Any text content"
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "About QR Shuttle",
+    "subtitle": "The privacy-first QR code generator",
+    "description": "QR Shuttle is a free online tool that generates QR codes directly in your browser. We believe in privacy-first design — your data never leaves your device.",
+    "features": {
+      "privacy": {
+        "title": "Privacy First",
+        "description": "All QR codes are generated locally in your browser. No data is uploaded to any server."
+      },
+      "openSource": {
+        "title": "Open Source",
+        "description": "Our code is open source and transparent. You can verify our privacy claims."
+      },
+      "noTracking": {
+        "title": "No Tracking",
+        "description": "We don't track you, use cookies, or collect any personal information."
+      },
+      "free": {
+        "title": "Completely Free",
+        "description": "No hidden fees, no premium features, no watermarks — 100% free forever."
+      }
+    },
+    "faq": {
+      "whoFor": {
+        "title": "Who is QR Shuttle for?",
+        "items": {
+          "marketers": "Marketers creating QR codes for campaigns and social media",
+          "business": "Small business owners for business cards and store displays",
+          "events": "Event organizers for check-in codes and WiFi sharing",
+          "developers": "Developers testing QR code implementations"
+        }
+      },
+      "whenUse": {
+        "title": "When should I use QR Shuttle?",
+        "items": {
+          "marketing": "Marketing campaigns and advertising materials",
+          "business": "Business cards and professional networking",
+          "restaurant": "Restaurant menus and contactless ordering",
+          "events": "Event check-in and registration",
+          "wifi": "Sharing WiFi credentials with guests"
+        }
+      },
+      "howtos": {
+        "generate": {
+          "title": "How to generate a QR code",
+          "steps": {
+            "step1": "Select the type of QR code you want to create",
+            "step2": "Enter your content (URL, text, WiFi details, etc.)",
+            "step3": "Customize colors, size, and style",
+            "step4": "Download in PNG, SVG, or JPG format"
+          }
+        }
+      },
+      "comparison": {
+        "title": "QR Shuttle vs Other Tools",
+        "columns": ["Feature", "QR Shuttle", "qr-code-generator.com", "qrcode-monkey.com"],
+        "rows": {
+          "privacy": ["Privacy", "100% browser-side", "Server processing", "Server processing"],
+          "price": ["Price", "Free forever", "Freemium with ads", "Freemium"],
+          "watermark": ["Watermark", "None", "Free tier has", "Free tier has"],
+          "registration": ["Registration", "Not required", "Required for features", "Required for features"]
+        }
+      },
+      "faqs": [
+        {
+          "question": "Is QR Shuttle really free?",
+          "answer": "Yes, QR Shuttle is completely free to use. There are no hidden fees, premium features, or watermarks. You can generate unlimited QR codes without any restrictions."
+        },
+        {
+          "question": "Is my data safe?",
+          "answer": "Absolutely. All QR code generation happens directly in your browser. No data is uploaded to any server, ensuring complete privacy and security."
+        },
+        {
+          "question": "What QR code types are supported?",
+          "answer": "QR Shuttle supports URL, Text, WiFi, vCard, Email, SMS, Phone, Location, and Event QR codes. Each type has specific input fields for easy generation."
+        },
+        {
+          "question": "Can I customize the QR code design?",
+          "answer": "Yes, you can customize foreground and background colors, choose between square, dots, or rounded styles, adjust size, and even add a logo to the center of your QR code."
+        },
+        {
+          "question": "What formats can I export?",
+          "answer": "You can export QR codes in PNG, SVG, or JPG formats. PNG is best for web use, SVG for scalability, and JPG for smaller file sizes."
+        },
+        {
+          "question": "Do I need to create an account?",
+          "answer": "No, QR Shuttle requires no registration or account creation. Simply visit the website and start generating QR codes immediately."
+        },
+        {
+          "question": "Can I use QR codes commercially?",
+          "answer": "Yes, all QR codes generated are free for personal and commercial use. There are no restrictions on how you use them."
+        },
+        {
+          "question": "How do WiFi QR codes work?",
+          "answer": "WiFi QR codes contain network credentials. When scanned, devices can automatically connect to the WiFi network without manually entering the password."
+        },
+        {
+          "question": "What is error correction level?",
+          "answer": "Error correction determines how much of the QR code can be damaged while still being readable. Higher levels (H=30%) are better for codes with logos, while lower levels (L=7%) create smaller codes."
+        }
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Your privacy is our priority",
+    "lastUpdated": "Last updated: June 2026",
+    "sections": {
+      "dataCollection": {
+        "title": "Data Collection",
+        "content": "QR Shuttle does not collect any personal data. All QR code generation happens entirely in your browser. We do not have access to the content you encode, your IP address, or any other identifying information."
+      },
+      "dataUsage": {
+        "title": "Data Usage",
+        "content": "Since we don't collect any data, we don't use, share, or sell any information. Our service operates entirely client-side, ensuring complete privacy."
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "content": "Your data security is guaranteed because your data never leaves your device. All processing happens locally in your web browser using JavaScript. No server-side processing occurs."
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "content": "We use Cloudflare for content delivery and hosting. No user data is shared with Cloudflare beyond standard web server logs. We do not use analytics, tracking cookies, or advertising networks."
+      },
+      "userRights": {
+        "title": "Your Rights",
+        "content": "Since we don't collect personal data, there's no data to access, modify, or delete. You have complete control over your information at all times."
+      },
+      "changes": {
+        "title": "Policy Changes",
+        "content": "We may update this privacy policy occasionally. Any changes will be posted on this page with an updated revision date."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have questions about this privacy policy, please contact us at support@shuttlelab.org"
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "subtitle": "Terms and conditions for using QR Shuttle",
+    "lastUpdated": "Last updated: June 2026",
+    "sections": {
+      "service": {
+        "title": "Service Description",
+        "content": "QR Shuttle is a free online QR code generator that allows users to create QR codes for various purposes including URLs, WiFi credentials, contact information, and more. The service is provided as-is without warranties."
+      },
+      "license": {
+        "title": "Usage License",
+        "content": "You are granted a non-exclusive, non-transferable license to use QR Shuttle for personal and commercial purposes. You may not modify, distribute, or reverse-engineer the service."
+      },
+      "limitations": {
+        "title": "Limitation of Liability",
+        "content": "QR Shuttle is provided 'as is' without warranties of any kind. We are not liable for any damages arising from the use of this service, including but not limited to direct, indirect, incidental, or consequential damages."
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": "The QR codes you generate are your property. QR Shuttle retains no rights to the content you encode. The service itself, including design, code, and documentation, is protected by copyright."
+      },
+      "changes": {
+        "title": "Terms Changes",
+        "content": "We reserve the right to modify these terms at any time. Continued use of the service constitutes acceptance of any changes."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "content": "For questions about these terms, please contact support@shuttlelab.org"
+      }
+    }
+  },
+  "footer": {
+    "about": "About",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "github": "GitHub",
+    "copyright": "© 2026 ShuttleLab. All rights reserved.",
+    "otherTools": "Other ShuttleLab Tools",
+    "otherToolsDescription": "Check out our other free utilities"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home",
+    "otherTools": "Try our other tools"
+  }
+}
