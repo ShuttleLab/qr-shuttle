@@ -465,7 +465,7 @@ export function QRGenerator() {
             value={activeType}
             onValueChange={(value) => handleTypeChange(value as QRCodeType)}
           >
-            <TabsList className="grid h-auto w-full grid-cols-3 gap-1 sm:grid-cols-5 lg:grid-cols-9">
+            <TabsList className="grid h-auto group-data-[orientation=horizontal]/tabs:h-auto w-full grid-cols-3 gap-1 sm:grid-cols-5 lg:grid-cols-9">
               <TabsTrigger value="url" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.url")}
               </TabsTrigger>
