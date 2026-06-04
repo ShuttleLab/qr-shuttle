@@ -14,7 +14,7 @@ export function QRPreview({ value, options, canvasRef }: QRPreviewProps) {
   const t = useTranslations("home.generator");
   if (!value) {
     return (
-      <div className="flex items-center justify-center w-full h-64 bg-muted rounded-lg border-2 border-dashed">
+      <div className="flex items-center justify-center w-full max-w-lg mx-auto aspect-square bg-muted rounded-lg border-2 border-dashed">
         <p className="text-muted-foreground text-sm">
           {t("emptyState")}
         </p>
@@ -33,11 +33,11 @@ export function QRPreview({ value, options, canvasRef }: QRPreviewProps) {
       ? "transparent"
       : options.backgroundColor,
     level: options.errorCorrectionLevel,
-    // Scale down inside narrow panels instead of getting clipped; the
-    // intrinsic size (and canvas export resolution) stays options.size.
+    // Display size is decoupled from export size: the preview fills its
+    // column for visual balance, while the intrinsic size (and canvas
+    // export resolution) stays options.size.
     style: {
       width: "100%",
-      maxWidth: `${options.size}px`,
       height: "auto",
     },
   };
@@ -47,7 +47,7 @@ export function QRPreview({ value, options, canvasRef }: QRPreviewProps) {
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">
-      <div className={`relative bg-white ${frameRadius} p-4 shadow-sm max-w-full`}>
+      <div className={`relative bg-white ${frameRadius} p-5 shadow-sm w-full max-w-lg`}>
         {options.style === "dots" ? (
           <QRCodeCanvas
             ref={canvasRef}
