@@ -150,7 +150,7 @@ export function QRGenerator() {
                 value={formData.encryption}
                 onValueChange={(value) => updateFormData("encryption", value || "WPA")}
               >
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue
                     placeholder={t(
                       "home.generator.inputs.wifi.encryption.placeholder"
@@ -160,7 +160,9 @@ export function QRGenerator() {
                 <SelectContent>
                   {WIFI_ENCRYPTION_TYPES.map((type) => (
                     <SelectItem key={type.value} value={type.value}>
-                      {type.label}
+                      {t(
+                        `home.generator.inputs.wifi.encryption.options.${type.value}`
+                      )}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -463,32 +465,32 @@ export function QRGenerator() {
             value={activeType}
             onValueChange={(value) => handleTypeChange(value as QRCodeType)}
           >
-            <TabsList className="grid w-full grid-cols-3 sm:grid-cols-5 lg:grid-cols-9">
-              <TabsTrigger value="url">
+            <TabsList className="grid h-auto w-full grid-cols-3 gap-1 sm:grid-cols-5 lg:grid-cols-9">
+              <TabsTrigger value="url" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.url")}
               </TabsTrigger>
-              <TabsTrigger value="text">
+              <TabsTrigger value="text" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.text")}
               </TabsTrigger>
-              <TabsTrigger value="wifi">
+              <TabsTrigger value="wifi" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.wifi")}
               </TabsTrigger>
-              <TabsTrigger value="vcard">
+              <TabsTrigger value="vcard" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.vcard")}
               </TabsTrigger>
-              <TabsTrigger value="email">
+              <TabsTrigger value="email" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.email")}
               </TabsTrigger>
-              <TabsTrigger value="sms">
+              <TabsTrigger value="sms" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.sms")}
               </TabsTrigger>
-              <TabsTrigger value="phone">
+              <TabsTrigger value="phone" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.phone")}
               </TabsTrigger>
-              <TabsTrigger value="location">
+              <TabsTrigger value="location" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.location")}
               </TabsTrigger>
-              <TabsTrigger value="event">
+              <TabsTrigger value="event" className="h-10 whitespace-normal">
                 {t("home.generator.tabs.event")}
               </TabsTrigger>
             </TabsList>

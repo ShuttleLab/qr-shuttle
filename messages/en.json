@@ -19,7 +19,11 @@
     "error": "Error",
     "success": "Success",
     "warning": "Warning",
-    "info": "Info"
+    "info": "Info",
+    "appearance": "Appearance",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark"
   },
   "nav": {
     "home": "Home",
@@ -130,7 +134,12 @@
           },
           "encryption": {
             "label": "Encryption",
-            "placeholder": "Select encryption type"
+            "placeholder": "Select encryption type",
+            "options": {
+              "WPA": "WPA/WPA2",
+              "WEP": "WEP",
+              "nopass": "None"
+            }
           },
           "hidden": {
             "label": "Hidden Network"
@@ -249,14 +258,20 @@
         },
         "logo": "Logo",
         "logoSize": "Logo Size",
-        "transparent": "Transparent Background"
+        "transparent": "Transparent Background",
+        "removeLogo": "Remove",
+        "foregroundAria": "Set foreground color to {color}",
+        "backgroundAria": "Set background color to {color}"
       },
       "export": {
         "title": "Export",
         "png": "PNG",
         "svg": "SVG",
-        "jpg": "JPG"
-      }
+        "jpg": "JPG",
+        "success": "{format} downloaded",
+        "error": "Failed to export QR code"
+      },
+      "emptyState": "Enter content to generate QR code"
     },
     "templates": {
       "title": "Quick Templates",
@@ -344,12 +359,37 @@
       },
       "comparison": {
         "title": "QR Shuttle vs Other Tools",
-        "columns": ["Feature", "QR Shuttle", "qr-code-generator.com", "qrcode-monkey.com"],
+        "columns": [
+          "Feature",
+          "QR Shuttle",
+          "qr-code-generator.com",
+          "qrcode-monkey.com"
+        ],
         "rows": {
-          "privacy": ["Privacy", "100% browser-side", "Server processing", "Server processing"],
-          "price": ["Price", "Free forever", "Freemium with ads", "Freemium"],
-          "watermark": ["Watermark", "None", "Free tier has", "Free tier has"],
-          "registration": ["Registration", "Not required", "Required for features", "Required for features"]
+          "privacy": [
+            "Privacy",
+            "100% browser-side",
+            "Server processing",
+            "Server processing"
+          ],
+          "price": [
+            "Price",
+            "Free forever",
+            "Freemium with ads",
+            "Freemium"
+          ],
+          "watermark": [
+            "Watermark",
+            "None",
+            "Free tier has",
+            "Free tier has"
+          ],
+          "registration": [
+            "Registration",
+            "Not required",
+            "Required for features",
+            "Required for features"
+          ]
         }
       },
       "faqs": [

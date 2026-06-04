@@ -19,7 +19,11 @@
     "error": "错误",
     "success": "成功",
     "warning": "警告",
-    "info": "信息"
+    "info": "信息",
+    "appearance": "外观",
+    "themeSystem": "跟随系统",
+    "themeLight": "日间模式",
+    "themeDark": "暗色模式"
   },
   "nav": {
     "home": "首页",
@@ -130,7 +134,12 @@
           },
           "encryption": {
             "label": "加密方式",
-            "placeholder": "选择加密类型"
+            "placeholder": "选择加密类型",
+            "options": {
+              "WPA": "WPA/WPA2",
+              "WEP": "WEP",
+              "nopass": "无"
+            }
           },
           "hidden": {
             "label": "隐藏网络"
@@ -249,14 +258,20 @@
         },
         "logo": "Logo",
         "logoSize": "Logo大小",
-        "transparent": "透明背景"
+        "transparent": "透明背景",
+        "removeLogo": "移除",
+        "foregroundAria": "将前景色设为 {color}",
+        "backgroundAria": "将背景色设为 {color}"
       },
       "export": {
         "title": "导出",
         "png": "PNG",
         "svg": "SVG",
-        "jpg": "JPG"
-      }
+        "jpg": "JPG",
+        "success": "已下载 {format}",
+        "error": "导出二维码失败"
+      },
+      "emptyState": "输入内容以生成二维码"
     },
     "templates": {
       "title": "快速模板",
@@ -344,12 +359,37 @@
       },
       "comparison": {
         "title": "QR Shuttle 与其他工具对比",
-        "columns": ["功能", "QR Shuttle", "qr-code-generator.com", "qrcode-monkey.com"],
+        "columns": [
+          "功能",
+          "QR Shuttle",
+          "qr-code-generator.com",
+          "qrcode-monkey.com"
+        ],
         "rows": {
-          "privacy": ["隐私保护", "100%浏览器端", "服务器处理", "服务器处理"],
-          "price": ["价格", "永久免费", "有广告的免费增值", "免费增值"],
-          "watermark": ["水印", "无", "免费版有", "免费版有"],
-          "registration": ["注册要求", "无需注册", "功能需要注册", "功能需要注册"]
+          "privacy": [
+            "隐私保护",
+            "100%浏览器端",
+            "服务器处理",
+            "服务器处理"
+          ],
+          "price": [
+            "价格",
+            "永久免费",
+            "有广告的免费增值",
+            "免费增值"
+          ],
+          "watermark": [
+            "水印",
+            "无",
+            "免费版有",
+            "免费版有"
+          ],
+          "registration": [
+            "注册要求",
+            "无需注册",
+            "功能需要注册",
+            "功能需要注册"
+          ]
         }
       },
       "faqs": [

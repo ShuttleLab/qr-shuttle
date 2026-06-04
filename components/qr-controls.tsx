@@ -24,6 +24,9 @@ import {
   PRESET_COLORS,
 } from "@/lib/constants";
 
+type ErrorLevelKey = "L" | "M" | "Q" | "H";
+type StyleKey = "square" | "dots" | "rounded";
+
 interface QRControlsProps {
   options: QRCodeOptions;
   onChange: (options: QRCodeOptions) => void;
@@ -53,24 +56,31 @@ export function QRControls({
       </h3>
 
       <div className="space-y-2">
-        <Label className="text-xs">
+        <Label htmlFor="fg-color" className="text-xs">
           {t("home.generator.controls.foreground")}
         </Label>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Input
+            id="fg-color"
             type="color"
             value={options.foregroundColor}
             onChange={(e) => updateOption("foregroundColor", e.target.value)}
-            className="w-12 h-8 p-1 cursor-pointer"
+            className="w-12 h-10 p-1 cursor-pointer shrink-0"
           />
+          <span className="text-xs font-mono text-muted-foreground uppercase w-16">
+            {options.foregroundColor}
+          </span>
           <div className="flex gap-1 flex-wrap">
             {PRESET_COLORS.slice(0, 5).map((color) => (
               <button
                 key={color}
-                className="w-6 h-6 rounded border cursor-pointer hover:scale-110 transition-transform"
+                type="button"
+                className="w-10 h-10 rounded border cursor-pointer hover:scale-110 transition-transform"
                 style={{ backgroundColor: color }}
                 onClick={() => updateOption("foregroundColor", color)}
-                aria-label={`Set foreground color to ${color}`}
+                aria-label={t("home.generator.controls.foregroundAria", {
+                  color,
+                })}
               />
             ))}
           </div>
@@ -78,25 +88,34 @@ export function QRControls({
       </div>
 
       <div className="space-y-2">
-        <Label className="text-xs">
+        <Label htmlFor="bg-color" className="text-xs">
           {t("home.generator.controls.background")}
         </Label>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Input
+            id="bg-color"
             type="color"
             value={options.backgroundColor}
             onChange={(e) => updateOption("backgroundColor", e.target.value)}
-            className="w-12 h-8 p-1 cursor-pointer"
+            className="w-12 h-10 p-1 cursor-pointer shrink-0"
             disabled={options.transparentBackground}
           />
+          <span className="text-xs font-mono text-muted-foreground uppercase w-16">
+            {options.transparentBackground
+              ? "—"
+              : options.backgroundColor}
+          </span>
           <div className="flex gap-1 flex-wrap">
             {PRESET_COLORS.slice(5).map((color) => (
               <button
                 key={color}
-                className="w-6 h-6 rounded border cursor-pointer hover:scale-110 transition-transform"
+                type="button"
+                className="w-10 h-10 rounded border cursor-pointer hover:scale-110 transition-transform"
                 style={{ backgroundColor: color }}
                 onClick={() => updateOption("backgroundColor", color)}
-                aria-label={`Set background color to ${color}`}
+                aria-label={t("home.generator.controls.backgroundAria", {
+                  color,
+                })}
               />
             ))}
           </div>
@@ -129,13 +148,15 @@ export function QRControls({
             updateOption("errorCorrectionLevel", value as ErrorCorrectionLevel)
           }
         >
-          <SelectTrigger>
+          <SelectTrigger className="w-full">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
             {ERROR_CORRECTION_LEVELS.map((level) => (
               <SelectItem key={level.value} value={level.value}>
-                {level.label}
+                {t(
+                  `home.generator.controls.errorLevels.${level.value as ErrorLevelKey}`
+                )}
               </SelectItem>
             ))}
           </SelectContent>
@@ -148,13 +169,15 @@ export function QRControls({
           value={options.style}
           onValueChange={(value) => updateOption("style", value as QRStyle)}
         >
-          <SelectTrigger>
+          <SelectTrigger className="w-full">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
             {QR_STYLES.map((style) => (
               <SelectItem key={style.value} value={style.value}>
-                {style.label}
+                {t(
+                  `home.generator.controls.styles.${style.value as StyleKey}`
+                )}
               </SelectItem>
             ))}
           </SelectContent>
@@ -162,20 +185,23 @@ export function QRControls({
       </div>
 
       <div className="space-y-2">
-        <Label className="text-xs">{t("home.generator.controls.logo")}</Label>
-        <div className="flex items-center gap-2">
+        <Label htmlFor="logo-upload" className="text-xs">
+          {t("home.generator.controls.logo")}
+        </Label>
+        <div className="flex items-center gap-2 flex-wrap">
           <Input
+            id="logo-upload"
             type="file"
             accept="image/*"
             onChange={(e) => {
               const file = e.target.files?.[0];
               if (file) onLogoUpload(file);
             }}
-            className="text-xs"
+            className="text-xs flex-1 min-w-0"
           />
           {options.logoUrl && (
             <Button variant="outline" size="sm" onClick={onRemoveLogo}>
-              Remove
+              {t("home.generator.controls.removeLogo")}
             </Button>
           )}
         </div>

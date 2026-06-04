@@ -1,6 +1,7 @@
 "use client";
 
 import { QRCodeSVG, QRCodeCanvas } from "qrcode.react";
+import { useTranslations } from "next-intl";
 import type { QRCodeOptions } from "@/lib/qr-utils";
 
 interface QRPreviewProps {
@@ -10,11 +11,12 @@ interface QRPreviewProps {
 }
 
 export function QRPreview({ value, options, canvasRef }: QRPreviewProps) {
+  const t = useTranslations("home.generator");
   if (!value) {
     return (
       <div className="flex items-center justify-center w-full h-64 bg-muted rounded-lg border-2 border-dashed">
         <p className="text-muted-foreground text-sm">
-          Enter content to generate QR code
+          {t("emptyState")}
         </p>
       </div>
     );
