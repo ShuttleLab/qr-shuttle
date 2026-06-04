@@ -1,5 +1,6 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
+import { Link as LocaleLink } from "@/i18n/navigation";
 import { QRGenerator } from "@/components/qr-generator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -9,22 +10,45 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata = {
-  title: "Custom QR Code with Logo | Free Online Tool",
-  description:
-    "Create custom QR codes with your logo and brand colors. Match QR codes to your brand identity for marketing and packaging. Free, private, no registration.",
-  alternates: {
-    canonical: "https://qr.shuttlelab.org/tools/custom-qr-code/",
-  },
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const canonical = "https://qr.shuttlelab.org/tools/custom-qr-code/";
+
+  if (locale === "zh") {
+    const t = await getTranslations({ locale, namespace: "toolPages.customQrCode" });
+    return {
+      title: t("title"),
+      description: t("subtitle"),
+      alternates: { canonical },
+      openGraph: {
+        title: t("title"),
+        description: t("subtitle"),
+        siteName: "QR Shuttle",
+        type: "website",
+        locale: "zh_CN",
+      },
+    };
+  }
+
+  return {
     title: "Custom QR Code with Logo | Free Online Tool",
     description:
-      "Create custom QR codes with your logo and brand colors. Match QR codes to your brand identity for marketing and packaging.",
-    siteName: "QR Shuttle",
-    type: "website",
-    locale: "en_US",
-  },
-};
+      "Create custom QR codes with your logo and brand colors. Match QR codes to your brand identity for marketing and packaging. Free, private, no registration.",
+    alternates: { canonical },
+    openGraph: {
+      title: "Custom QR Code with Logo | Free Online Tool",
+      description:
+        "Create custom QR codes with your logo and brand colors. Match QR codes to your brand identity for marketing and packaging.",
+      siteName: "QR Shuttle",
+      type: "website",
+      locale: "en_US",
+    },
+  };
+}
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -151,6 +175,25 @@ export default async function CustomQrCodePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "zh") {
+    const t = await getTranslations({ locale, namespace: "toolPages.customQrCode" });
+    const tc = await getTranslations({ locale, namespace: "toolPages" });
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <h1 className="text-3xl font-bold mb-4">{t("title")}</h1>
+        <p className="text-lg text-muted-foreground mb-8">{t("subtitle")}</p>
+        <div className="mb-12">
+          <QRGenerator />
+        </div>
+        <p className="text-sm text-muted-foreground">
+          <LocaleLink href="/tools/custom-qr-code" locale="en" className="underline">
+            {tc("viewFullGuide")}
+          </LocaleLink>
+        </p>
+      </div>
+    );
+  }
 
   const faqs = [
     {

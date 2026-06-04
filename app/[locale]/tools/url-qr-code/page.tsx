@@ -1,4 +1,5 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { QRGenerator } from "@/components/qr-generator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -8,22 +9,45 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata = {
-  title: "Generate QR Code for URL | Free Online Tool",
-  description:
-    "Create QR codes for any website URL instantly. Free, private, no registration required. Customize colors, add logo, and download as PNG, SVG, or JPG.",
-  alternates: {
-    canonical: "https://qr.shuttlelab.org/tools/url-qr-code/",
-  },
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const canonical = "https://qr.shuttlelab.org/tools/url-qr-code/";
+
+  if (locale === "zh") {
+    const t = await getTranslations({ locale, namespace: "toolPages.urlQrCode" });
+    return {
+      title: t("title"),
+      description: t("subtitle"),
+      alternates: { canonical },
+      openGraph: {
+        title: t("title"),
+        description: t("subtitle"),
+        siteName: "QR Shuttle",
+        type: "website",
+        locale: "zh_CN",
+      },
+    };
+  }
+
+  return {
     title: "Generate QR Code for URL | Free Online Tool",
     description:
-      "Create QR codes for any website URL instantly. Free, private, no registration required.",
-    siteName: "QR Shuttle",
-    type: "website",
-    locale: "en_US",
-  },
-};
+      "Create QR codes for any website URL instantly. Free, private, no registration required. Customize colors, add logo, and download as PNG, SVG, or JPG.",
+    alternates: { canonical },
+    openGraph: {
+      title: "Generate QR Code for URL | Free Online Tool",
+      description:
+        "Create QR codes for any website URL instantly. Free, private, no registration required.",
+      siteName: "QR Shuttle",
+      type: "website",
+      locale: "en_US",
+    },
+  };
+}
 
 const howToSchema = {
   "@context": "https://schema.org",
@@ -150,6 +174,25 @@ export default async function UrlQrCodePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  if (locale === "zh") {
+    const t = await getTranslations({ locale, namespace: "toolPages.urlQrCode" });
+    const tc = await getTranslations({ locale, namespace: "toolPages" });
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <h1 className="text-3xl font-bold mb-4">{t("title")}</h1>
+        <p className="text-lg text-muted-foreground mb-8">{t("subtitle")}</p>
+        <div className="mb-12">
+          <QRGenerator />
+        </div>
+        <p className="text-sm text-muted-foreground">
+          <Link href="/tools/url-qr-code" locale="en" className="underline">
+            {tc("viewFullGuide")}
+          </Link>
+        </p>
+      </div>
+    );
+  }
 
   const faqs = [
     {

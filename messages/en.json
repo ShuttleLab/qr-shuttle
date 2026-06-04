@@ -25,6 +25,33 @@
     "themeLight": "Light",
     "themeDark": "Dark"
   },
+  "toolPages": {
+    "viewFullGuide": "View the full English guide",
+    "urlQrCode": {
+      "title": "Generate QR Code for URL",
+      "subtitle": "Create QR codes for any website URL instantly. Free, private, no registration required. Customize colors, add logo, and download as PNG, SVG, or JPG."
+    },
+    "wifiQrCode": {
+      "title": "WiFi QR Code Generator",
+      "subtitle": "Create QR codes for WiFi network access. Share WiFi credentials instantly without typing passwords. Free, private, no registration."
+    },
+    "vcardQrCode": {
+      "title": "Business Card QR Code Generator",
+      "subtitle": "Create QR codes for business cards and contact sharing. Share vCard information instantly. Free, private, no registration required."
+    },
+    "textQrCode": {
+      "title": "Text QR Code Generator",
+      "subtitle": "Create QR codes for any plain text: serial numbers, coupon codes, instructions, or notes. Free, private, no registration required."
+    },
+    "emailQrCode": {
+      "title": "Email QR Code Generator",
+      "subtitle": "Create QR codes that open a pre-filled email. Set recipient, subject, and body for support, feedback, and contact. Free, private, no registration."
+    },
+    "customQrCode": {
+      "title": "Custom QR Code with Logo",
+      "subtitle": "Create custom QR codes with your logo and brand colors. Match QR codes to your brand identity for marketing and packaging. Free, private, no registration."
+    }
+  },
   "nav": {
     "home": "Home",
     "about": "About",

@@ -25,6 +25,33 @@
     "themeLight": "日间模式",
     "themeDark": "暗色模式"
   },
+  "toolPages": {
+    "viewFullGuide": "查看完整英文指南",
+    "urlQrCode": {
+      "title": "网址二维码生成器",
+      "subtitle": "为任意网站链接即刻生成二维码。免费、隐私、无需注册，可自定义颜色、添加 Logo，并导出为 PNG、SVG 或 JPG。"
+    },
+    "wifiQrCode": {
+      "title": "WiFi 二维码生成器",
+      "subtitle": "扫码即连，无需手输密码。免费、隐私、无需注册，轻松与访客分享 WiFi。"
+    },
+    "vcardQrCode": {
+      "title": "名片二维码生成器",
+      "subtitle": "为名片和联系方式生成二维码，扫一扫即可保存 vCard 联系人。免费、隐私、无需注册。"
+    },
+    "textQrCode": {
+      "title": "文本二维码生成器",
+      "subtitle": "为任意纯文本生成二维码：序列号、优惠码、说明或备注。免费、隐私、无需注册。"
+    },
+    "emailQrCode": {
+      "title": "邮件二维码生成器",
+      "subtitle": "生成扫码即可打开预填邮件的二维码，可设置收件人、主题和正文，适用于客服、反馈与联系。免费、隐私、无需注册。"
+    },
+    "customQrCode": {
+      "title": "自定义 Logo 二维码生成器",
+      "subtitle": "用你的 Logo 和品牌色生成自定义二维码，让二维码契合品牌形象，适用于营销与包装。免费、隐私、无需注册。"
+    }
+  },
   "nav": {
     "home": "首页",
     "about": "关于",
