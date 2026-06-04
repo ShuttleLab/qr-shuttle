@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const SUGGESTIONS = [
-  { name: "Image Shuttle", host: "image.shuttlelab.org" },
   { name: "Note Shuttle", host: "note.shuttlelab.org" },
   { name: "Status Shuttle", host: "status.shuttlelab.org" },
 ];

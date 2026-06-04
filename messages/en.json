@@ -23,7 +23,9 @@
     "appearance": "Appearance",
     "themeSystem": "System",
     "themeLight": "Light",
-    "themeDark": "Dark"
+    "themeDark": "Dark",
+    "notePromoDesc": "Markdown editor & sharing",
+    "statusPromoDesc": "Uptime monitoring & alerts"
   },
   "toolPages": {
     "viewFullGuide": "View the full English guide",

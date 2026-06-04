@@ -495,21 +495,12 @@ export function QRGenerator() {
               </TabsTrigger>
             </TabsList>
 
-            <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              {/* Left: the working column — inputs, customization, export */}
               <div className="space-y-6">
                 <TabsContent value={activeType} className="mt-0">
                   {renderTypeInputs()}
                 </TabsContent>
-              </div>
-
-              <div className="space-y-6">
-                <div ref={svgContainerRef}>
-                  <QRPreview
-                    value={qrValue}
-                    options={options}
-                    canvasRef={canvasRef}
-                  />
-                </div>
 
                 <QRControls
                   options={options}
@@ -522,6 +513,15 @@ export function QRGenerator() {
                   type={activeType}
                   canvasRef={canvasRef}
                   svgContainerRef={svgContainerRef}
+                />
+              </div>
+
+              {/* Right: live preview, sticky so it follows while you tweak */}
+              <div className="lg:sticky lg:top-20 self-start" ref={svgContainerRef}>
+                <QRPreview
+                  value={qrValue}
+                  options={options}
+                  canvasRef={canvasRef}
                 />
               </div>
             </div>

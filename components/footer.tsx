@@ -53,14 +53,25 @@ export default function Footer() {
               {t("footer.otherTools")}:
             </span>
             <a
-              href="https://image.shuttlelab.org"
+              href="https://note.shuttlelab.org"
               rel="noopener"
               className="font-semibold text-foreground hover:text-primary transition-colors"
             >
-              Image Shuttle
+              Note Shuttle
             </a>
             <span className="text-muted-foreground text-xs">
-              {t("footer.otherToolsDescription")}
+              {t("common.notePromoDesc")}
+            </span>
+            <span className="text-muted-foreground/30">|</span>
+            <a
+              href="https://status.shuttlelab.org"
+              rel="noopener"
+              className="font-semibold text-foreground hover:text-primary transition-colors"
+            >
+              Status Shuttle
+            </a>
+            <span className="text-muted-foreground text-xs">
+              {t("common.statusPromoDesc")}
             </span>
           </p>
           <p>{t("footer.copyright")}</p>

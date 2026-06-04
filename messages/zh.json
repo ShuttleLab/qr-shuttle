@@ -23,7 +23,9 @@
     "appearance": "外观",
     "themeSystem": "跟随系统",
     "themeLight": "日间模式",
-    "themeDark": "暗色模式"
+    "themeDark": "暗色模式",
+    "notePromoDesc": "Markdown 编辑与分享",
+    "statusPromoDesc": "可用性监控与告警"
   },
   "toolPages": {
     "viewFullGuide": "查看完整英文指南",
