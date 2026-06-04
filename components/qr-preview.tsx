@@ -20,6 +20,9 @@ export function QRPreview({ value, options, canvasRef }: QRPreviewProps) {
     );
   }
 
+  // NOTE: never apply border-radius to the QR element itself — clipping the
+  // corners removes the finder patterns and breaks scanning. The style option
+  // only rounds the white frame around the code.
   const qrProps = {
     value,
     size: options.size,
@@ -28,15 +31,21 @@ export function QRPreview({ value, options, canvasRef }: QRPreviewProps) {
       ? "transparent"
       : options.backgroundColor,
     level: options.errorCorrectionLevel,
+    // Scale down inside narrow panels instead of getting clipped; the
+    // intrinsic size (and canvas export resolution) stays options.size.
     style: {
-      borderRadius:
-        options.style === "rounded" ? "8px" : options.style === "dots" ? "50%" : "0",
+      width: "100%",
+      maxWidth: `${options.size}px`,
+      height: "auto",
     },
   };
 
+  const frameRadius =
+    options.style === "rounded" ? "rounded-2xl" : options.style === "dots" ? "rounded-3xl" : "rounded-lg";
+
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="relative bg-white rounded-lg p-4 shadow-sm">
+    <div className="flex flex-col items-center gap-4 w-full">
+      <div className={`relative bg-white ${frameRadius} p-4 shadow-sm max-w-full`}>
         {options.style === "dots" ? (
           <QRCodeCanvas
             ref={canvasRef}
