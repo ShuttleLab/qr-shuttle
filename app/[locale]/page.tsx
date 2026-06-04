@@ -72,13 +72,19 @@ export default async function HomePage({
 
   return (
     <div className="space-y-12 pb-16">
-      <section className="text-center py-12 px-4">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+      <section className="text-center pt-8 pb-4 px-4">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
           {t("hero.title")}
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="mt-2 text-base text-muted-foreground max-w-2xl mx-auto">
           {t("hero.subtitle")}
         </p>
+      </section>
+
+      <section className="px-4">
+        <div className="max-w-7xl mx-auto">
+          <QRGenerator />
+        </div>
       </section>
 
       <section className="px-4">
@@ -129,12 +135,6 @@ export default async function HomePage({
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="px-4">
-        <div className="max-w-7xl mx-auto">
-          <QRGenerator />
         </div>
       </section>
     </div>
