@@ -156,7 +156,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 2,
       name: "Tools",
-      item: "https://qr.shuttlelab.org/tools",
+      item: "https://qr.shuttlelab.org/tools/",
     },
     {
       "@type": "ListItem",
