@@ -2,6 +2,8 @@
 
 A small web app to generate custom QR codes. Everything runs in the browser; no data is sent to any server, no watermarks.
 
+**🔗 Try it live: [Free custom QR code generator](https://qr.shuttlelab.org)** — colors, logos, WiFi, vCard, email & more, all in your browser.
+
 ## Features
 
 - **Nine content types** – URL, text, WiFi, vCard, email, SMS, phone, location, and calendar event
