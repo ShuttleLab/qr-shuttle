@@ -1,138 +1,61 @@
-# QR Shuttle - Development Guide
+# QR Shuttle
 
-## Quick Start
+Static-site QR code generator. Everything runs in the browser — no server, no data collection.
+
+## Commands
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-
-# Lint code
-npm run lint
-
-# Type check
-npm run typecheck
+npm install          # install deps
+npm run dev          # next dev (http://localhost:3000)
+npm run build        # next build && node scripts/postbuild.mjs
+npm run lint         # eslint
 ```
+
+There is no `typecheck` or `test` script. The repo has no test framework.
+
+## Build quirk (postbuild)
+
+`npm run build` runs two steps:
+
+1. `next build` — emits static export to `out/` via `output: "export"` in next.config.ts. Because `localePrefix: "as-needed"` is used, the default locale (English) lands in `out/en/` but the canonical `/` URL is English. So step 2 fixes this.
+2. `node scripts/postbuild.mjs` — promotes `out/en/*` → `out/`, removes `out/en/`, patches `<html lang>` in `out/zh/**/*.html` from `"en"` → `"zh-CN"`, and generates a service worker `out/sw.js` that precaches all HTML routes + PWA assets.
+
+If you add a new route, verify it appears in the precache list. If you change the locale strategy, update the promotion/patching logic in `scripts/postbuild.mjs`.
 
 ## Architecture
 
-### Tech Stack
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **UI Components**: shadcn/ui (Radix UI)
-- **i18n**: next-intl (URL-based)
-- **QR Code**: qrcode.react
-- **Export**: file-saver
-- **Icons**: lucide-react
-- **Toast**: sonner
-- **Fonts**: Geist + Geist Mono
+- **Next.js 16 App Router** — all pages pre-rendered at build time (`output: "export"`).
+- **Tailwind CSS v4** — PostCSS plugin (`@tailwindcss/postcss`), no Tailwind config file.
+- **shadcn/ui** style `"base-nova"` — uses `@base-ui/react` (not Radix). Component source is in `components/ui/`.
+- **next-intl v4** — URL-based i18n, `localePrefix: "as-needed"`. English at `/`, Chinese at `/zh/...`. Translations in `messages/{en,zh}.json`.
+- **Color palette system** — 5 palettes (purple default, sakura, mint, ocean, sunset, graphite) applied via `<html data-palette="...">`, orthogonal to light/dark mode. See `app/globals.css` for token definitions (ShuttleLab hue 264). To add a palette: add CSS blocks for light and `.dark[data-palette="..."]` variants.
+- **QR code generation** — `qrcode.react` + `file-saver` for export (PNG/SVG/JPG). Logo embedding with QR center excavation.
+- **PWA** — service worker generated at build time by postbuild. Manifest and icons in `app/`.
 
-### Project Structure
+## Structure notes
 
-```
-qr-shuttle/
-├── app/
-│   ├── layout.tsx                  # Root layout (metadata, JSON-LD)
-│   ├── globals.css
-│   ├── sitemap.ts                  # SEO sitemap
-│   ├── robots.ts                   # SEO robots
-│   ├── opengraph-image.tsx         # OG image
-│   ├── icon-192.png/route.tsx      # PWA icon
-│   ├── icon-512.png/route.tsx      # PWA icon
-│   ├── manifest.ts                 # PWA manifest
-│   ├── not-found.tsx               # Custom 404
-│   └── [locale]/
-│       ├── layout.tsx              # Locale layout (next-intl provider)
-│       ├── page.tsx                # Layer 1 homepage
-│       ├── about/page.tsx          # Layer 3 About
-│       ├── privacy/page.tsx        # Layer 3 Privacy
-│       └── terms/page.tsx          # Layer 3 Terms
-├── components/
-│   ├── header.tsx                  # Navigation bar
-│   ├── footer.tsx                  # Footer
-│   ├── theme-sync.tsx              # Theme toggle
-│   ├── layout-shell.tsx            # Layout wrapper
-│   ├── qr-generator.tsx            # Main QR generator
-│   ├── qr-preview.tsx              # QR preview
-│   ├── qr-controls.tsx             # Customization controls
-│   ├── qr-templates.tsx            # Preset templates
-│   ├── qr-export.tsx               # Export functionality
-│   ├── about-content.tsx           # About page content
-│   ├── AboutFaq.tsx                # FAQ component
-│   ├── AboutFaqData.tsx            # FAQ data
-│   └── ui/                         # shadcn components
-├── i18n/
-│   ├── routing.ts                  # next-intl routing config
-│   ├── request.ts                  # Server-side request config
-│   └── navigation.ts               # Link, useRouter, etc.
-├── messages/
-│   ├── en.json                     # English translations
-│   └── zh.json                     # Chinese translations
-├── lib/
-│   ├── qr-utils.ts                 # QR code utility functions
-│   ├── qr-templates.ts             # Template data
-│   ├── utils.ts                    # cn() utility
-│   └── constants.ts                # Constants
-├── next.config.ts
-├── wrangler.toml
-├── package.json
-├── tsconfig.json
-├── postcss.config.mjs
-├── AGENTS.md                       # This file
-└── SEO_OVERVIEW.md                 # SEO asset map
-```
+| Path | Purpose |
+|------|---------|
+| `app/layout.tsx` | Root layout — global metadata, JSON-LD (SoftwareApplication schema), ThemeProvider, Toaster, SW registration |
+| `app/[locale]/layout.tsx` | Per-locale layout — next-intl provider, hreflang alternates, locale-specific metadata |
+| `app/[locale]/page.tsx` | Homepage — embeds `QRGenerator` component |
+| `app/[locale]/tools/` | Layer 4 SEO landing pages (6 pages, each with TechArticle/HowTo/FAQPage/BreadcrumbList schemas) |
+| `components/` | All UI: `qr-generator`, `qr-preview`, `qr-controls`, `qr-export`, `qr-templates`, `theme-sync`, `layout-shell` |
+| `lib/` | `qr-utils.ts` (value encoding), `qr-templates.ts` (default data), `constants.ts` (color arrays, types) |
+| `i18n/` | next-intl routing, request, and navigation config |
 
-### Key Features
+## Conventions
 
-1. **QR Code Types**: URL, Text, WiFi, vCard, Email, SMS, Phone, Location, Event
-2. **Customization**: Colors, size, error correction, style, logo upload
-3. **Export**: PNG, SVG, JPG formats
-4. **i18n**: English and Chinese support
-5. **Theme**: System/Light/Dark mode
-6. **PWA**: Installable on mobile devices
-7. **SEO**: Full metadata, sitemap, robots.txt, OG images
+- Import path alias: `@/*` maps to project root.
+- `cn()` utility from `@/lib/utils` (clsx + tailwind-merge).
+- All i18n keys use dot-separated namespaced paths (e.g. `home.templates.items.url.title`). Client: `useTranslations()`. Server: `getTranslations({ locale, namespace })`.
+- `params` is typed as `Promise<{ locale: string }>` (Next.js 16 pattern).
+- Call `setRequestLocale(locale)` in every server-rendered page for `generateStaticParams` support.
+- Deploys to Cloudflare Pages via `wrangler deploy` (config in `wrangler.toml`, assets in `out/`).
+- No `.env` files or environment variables needed.
+- After editing `package.json`, run `npm install` and commit the updated `package-lock.json`. Cloudflare Pages uses `npm ci` which fails if the lockfile is out of sync.
 
-### Deployment
+## Related files
 
-This project is configured for static export and Cloudflare Pages deployment:
-
-```bash
-# Build
-npm run build
-
-# Deploy to Cloudflare Pages
-wrangler deploy
-```
-
-The `out/` directory contains the static export ready for deployment.
-
-### Environment Variables
-
-No environment variables required for basic functionality. All QR code generation happens client-side.
-
-### Development Notes
-
-- All QR code generation happens in the browser (privacy-first)
-- No server-side processing or data collection
-- Translations are in `messages/en.json` and `messages/zh.json`
-- UI components use shadcn/ui pattern
-- Follows ShuttleLab conventions for consistency
-
-### Related Projects
-
-- [Image Shuttle](https://image.shuttlelab.org) - Image compression
-- [Note Shuttle](https://note.shuttlelab.org) - Encrypted notes
-- [Status Shuttle](https://status.shuttlelab.org) - Uptime monitoring
-
-### Support
-
-For issues or questions, contact: support@shuttlelab.org
+- `CLAUDE.md` delegates to this file (`@AGENTS.md`).
+- `SEO_OVERVIEW.md` documents SEO asset inventory and known gaps.
