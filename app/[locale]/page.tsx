@@ -1,5 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Link from "next/link";
 import { QRGenerator } from "@/components/qr-generator";
+import { routing } from "@/i18n/routing";
 import {
   Shield,
   Layers,
@@ -7,6 +9,7 @@ import {
   Zap,
   UserPlus,
   Sparkles,
+  ArrowRight,
 } from "lucide-react";
 
 export default async function HomePage({
@@ -18,6 +21,17 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "home" });
+  const base = locale === routing.defaultLocale ? "" : `/${locale}`;
+  const toolHref = (slug: string) => `${base}/tools/${slug}/`;
+
+  const templateLinks: { key: string; slug: string }[] = [
+    { key: "url", slug: "url-qr-code" },
+    { key: "wifi", slug: "wifi-qr-code" },
+    { key: "vcard", slug: "vcard-qr-code" },
+    { key: "email", slug: "email-qr-code" },
+    { key: "text", slug: "text-qr-code" },
+    { key: "sms", slug: "text-qr-code" },
+  ];
 
   const features = [
     {
@@ -133,6 +147,60 @@ export default async function HomePage({
                   {step.description}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4">{t("whyMatters.title")}</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            {t("whyMatters.p1")}
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            {t("whyMatters.p2")}
+          </p>
+        </div>
+      </section>
+
+      <section className="px-4">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4">{t("comparison.title")}</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            {t("comparison.p1")}
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            {t("comparison.p2")}
+          </p>
+        </div>
+      </section>
+
+      <section className="px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl font-bold text-center mb-2">
+            {t("templates.title")}
+          </h2>
+          <p className="text-muted-foreground text-center mb-8">
+            {t("templates.subtitle")}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {templateLinks.map(({ key, slug }) => (
+              <Link
+                key={key}
+                href={toolHref(slug)}
+                className="group flex items-center justify-between gap-4 p-4 rounded-lg border bg-card hover:border-primary/50 transition-colors"
+              >
+                <div>
+                  <h3 className="font-semibold">
+                    {t(`templates.items.${key}.title`)}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {t(`templates.items.${key}.description`)}
+                  </p>
+                </div>
+                <ArrowRight className="size-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+              </Link>
             ))}
           </div>
         </div>

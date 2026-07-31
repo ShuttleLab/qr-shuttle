@@ -129,6 +129,16 @@
         }
       }
     },
+    "whyMatters": {
+      "title": "Why QR Codes Matter",
+      "p1": "QR codes have become the everyday bridge between physical and digital worlds. Restaurants use them for contactless menus, stores for mobile payments and loyalty programs, and businesses for product packaging, event ticketing, and marketing campaigns. A QR code that scans instantly turns a poster, business card, or product label into a gateway to your website, app, menu, or contact details.",
+      "p2": "The difference between a code that gets scanned and one that gets ignored often comes down to reliability. Poor contrast, incorrect sizing, or added visual noise can make a QR code fail at the exact moment it matters. QR Shuttle generates clean, standards-compliant QR codes with built-in error correction, so they scan reliably even when printed small or shown on low-quality screens."
+    },
+    "comparison": {
+      "title": "QR Shuttle vs Other QR Code Generators",
+      "p1": "Many online QR code generators ask you to create an account, upload your content to their server, or accept watermarked images and download limits. That means the URL, WiFi password, or business contact data you encode passes through a third-party server you never chose to trust.",
+      "p2": "QR Shuttle takes a different approach: every code is generated entirely in your browser using your own device's processing power. Nothing is uploaded, no account is required, and downloads are unlimited and completely watermark-free. For anyone encoding sensitive links or personal WiFi credentials, that privacy difference matters."
+    },
     "generator": {
       "title": "QR Code Generator",
       "subtitle": "Create your custom QR code below",
